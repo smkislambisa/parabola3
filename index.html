@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17152d">
+  <meta name="description" content="AbdUmar Lab Maya — laboratorium virtual Fisika SMA untuk mempelajari dan mengeksplorasi gerak parabola.">
+  <title>AbdUmar Lab Maya | Gerak Parabola</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    #pro3dView{display:none;min-height:470px;border-radius:18px;overflow:hidden;background:#071226;position:relative}
+    #pro3dView.active{display:block}
+    #pro3dCanvas{display:block;width:100%;height:470px}
+    .view-note{position:absolute;left:16px;bottom:14px;background:rgba(7,18,38,.78);color:#dce7ff;padding:8px 12px;border-radius:10px;font-size:12px;backdrop-filter:blur(8px)}
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#beranda" aria-label="AbdUmar Lab Maya">
+        <span class="brand-mark">A<span>+</span></span>
+        <span class="brand-copy"><strong>AbdUmar</strong><small>LAB MAYA FISIKA</small></span>
+      </a>
+      <div class="side-label">MENU LABORATORIUM</div>
+      <nav class="nav-menu" aria-label="Navigasi utama">
+        <a href="#beranda" class="nav-link active" data-page="beranda"><span>⌂</span> Beranda</a>
+        <a href="#materi" class="nav-link" data-page="materi"><span>▤</span> Materi Pembelajaran</a>
+        <a href="#simulasi" class="nav-link" data-page="simulasi"><span>◉</span> Simulasi Interaktif</a>
+        <a href="#eksperimen" class="nav-link" data-page="eksperimen"><span>⌁</span> Eksperimen & Data</a>
+        <a href="#lkpd" class="nav-link" data-page="lkpd"><span>▧</span> LKPD Digital</a>
+        <a href="#evaluasi" class="nav-link" data-page="evaluasi"><span>✓</span> Evaluasi</a>
+        <a href="#panduan" class="nav-link" data-page="panduan"><span>ⓘ</span> Panduan Praktikum</a>
+        <a href="#labpro" class="nav-link" data-page="labpro"><span>✧</span> Virtual Lab Pro</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="offline-card"><span class="online-dot"></span><div><b>Mode Laboratorium</b><small>Berjalan di perangkat ini</small></div></div>
+        <div class="side-footer">© <span data-year></span> AbdUmar Lab Maya</div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="menuToggle" aria-label="Buka menu">☰</button>
+        <div class="breadcrumb"><span>Laboratorium Maya</span><b>/</b><strong id="crumbCurrent">Beranda</strong></div>
+        <div class="top-actions"><span class="class-chip">FISIKA SMA · X–XI</span><button class="avatar" title="AbdUmar Lab Maya">AM</button></div>
+      </header>
+
+      <section class="page active" id="page-beranda">
+        <div class="hero">
+          <div class="hero-content">
+            <div class="eyebrow"><i></i> VIRTUAL PHYSICS LABORATORY</div>
+            <h1>Jelajahi Sains.<br><em>Buktikan dengan</em> Eksperimen.</h1>
+            <p>Selamat datang di laboratorium virtual gerak parabola. Ubah parameter, amati lintasan, kumpulkan data, dan temukan hubungan matematis melalui eksperimen interaktif.</p>
+            <div class="hero-actions"><a class="btn btn-primary" href="#simulasi">Mulai Simulasi <span>↗</span></a><a class="btn btn-ghost" href="#materi">Pelajari Konsep</a></div>
+            <div class="hero-meta"><span>●</span> Simulasi ideal tanpa hambatan udara <b>·</b> Dapat digunakan di laptop dan ponsel</div>
+          </div>
+          <div class="hero-art" aria-label="Ilustrasi lintasan gerak parabola">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+            <div class="trajectory"><svg viewBox="0 0 460 260" role="img" aria-label="Lintasan parabola"><path d="M28 222 Q210 -125 430 222" fill="none" stroke="url(#traj)" stroke-width="3" stroke-dasharray="7 8"/><defs><linearGradient id="traj"><stop stop-color="#fb7185"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs></svg></div>
+            <div class="planet"></div><div class="projectile">●</div>
+            <div class="float-tag tag-angle">θ <b>45°</b><small>Sudut elevasi</small></div>
+            <div class="float-tag tag-range">R <b>32.4 m</b><small>Jangkauan ilustrasi</small></div>
+            <div class="hero-caption">PROJECTILE MOTION <span>01 / 06</span></div>
+          </div>
+        </div>
+
+        <div class="section-heading"><div><div class="eyebrow purple">MULAI BELAJAR</div><h2>Ruang eksplorasi</h2><p>Pilih aktivitas untuk memulai perjalanan eksperimenmu.</p></div></div>
+        <div class="feature-grid">
+          <a class="feature-card" href="#materi"><span class="feature-icon pink">▤</span><small>01 · KONSEP</small><h3>Materi Pembelajaran</h3><p>Pahami komponen gerak, persamaan posisi, waktu, dan jangkauan.</p><b>Pelajari materi <span>→</span></b></a>
+          <a class="feature-card" href="#simulasi"><span class="feature-icon violet">◉</span><small>02 · VISUALISASI</small><h3>Simulasi Interaktif</h3><p>Atur kecepatan, sudut, ketinggian, dan gravitasi secara langsung.</p><b>Buka laboratorium <span>→</span></b></a>
+          <a class="feature-card" href="#eksperimen"><span class="feature-icon blue">⌁</span><small>03 · INVESTIGASI</small><h3>Eksperimen & Data</h3><p>Catat hasil pengukuran, bandingkan percobaan, dan unduh data.</p><b>Lihat data <span>→</span></b></a>
+          <a class="feature-card" href="#lkpd"><span class="feature-icon gold">▧</span><small>04 · PRODUK BELAJAR</small><h3>LKPD Digital</h3><p>Kerjakan lembar kerja, tulis analisis, dan cetak laporan praktikum.</p><b>Kerjakan LKPD <span>→</span></b></a>
+        </div>
+        <div class="learning-note"><div class="note-symbol">✦</div><div><b>Pertanyaan pemantik</b><p>Mengapa sudut 45° sering menghasilkan jangkauan terjauh pada kondisi ketinggian awal dan akhir yang sama?</p></div><a href="#simulasi">Uji melalui simulasi ↗</a></div>
+      </section>
+
+      <section class="page" id="page-materi">
+        <div class="page-intro"><div class="eyebrow purple">MODUL PEMBELAJARAN · FASE E/F</div><h1>Memahami Gerak Parabola</h1><p>Pelajari konsep secara bertahap, kemudian buktikan melalui percobaan virtual.</p></div>
+        <div class="content-layout">
+          <article class="panel article-panel">
+            <h2>1. Pengertian Gerak Parabola</h2>
+            <p>Gerak parabola adalah gerak benda yang lintasannya berbentuk kurva parabola. Gerak ini merupakan perpaduan dua gerak yang saling tegak lurus: gerak lurus beraturan (GLB) pada arah horizontal dan gerak lurus berubah beraturan (GLBB) pada arah vertikal.</p>
+            <div class="concept-visual"><div class="mini-axes"><span>x</span><span>y</span><svg viewBox="0 0 420 180"><path d="M20 150 Q205 -90 400 150" fill="none" stroke="#9b5de5" stroke-width="4"/><path d="M20 150 H405 M20 150 V8" stroke="#9aa3b8" stroke-width="1.5"/><circle cx="20" cy="150" r="5" fill="#ed4775"/><circle cx="210" cy="32" r="5" fill="#9b5de5"/></svg></div><small>Ilustrasi lintasan gerak parabola (tanpa hambatan udara)</small></div>
+            <h2>2. Menguraikan Kecepatan Awal</h2>
+            <p>Kecepatan awal (<i>v</i><sub>0</sub>) membentuk sudut elevasi θ terhadap sumbu horizontal. Kecepatan tersebut dapat diuraikan menjadi dua komponen:</p>
+            <div class="formula-grid"><div class="formula-card"><small>KOMPONEN HORIZONTAL</small><strong>v<sub>x</sub> = v<sub>0</sub> cos θ</strong><p>Konstan jika hambatan udara diabaikan.</p></div><div class="formula-card"><small>KOMPONEN VERTIKAL</small><strong>v<sub>y</sub> = v<sub>0</sub> sin θ − gt</strong><p>Berubah karena percepatan gravitasi.</p></div></div>
+            <h2>3. Persamaan Posisi</h2>
+            <p>Posisi benda setiap saat dapat dihitung menggunakan persamaan berikut. Sumbu y positif diarahkan ke atas.</p>
+            <div class="equation-block"><span>Posisi horizontal</span><strong>x(t) = v<sub>0</sub> cos θ · t</strong><span>Posisi vertikal</span><strong>y(t) = h<sub>0</sub> + v<sub>0</sub> sin θ · t − ½gt²</strong></div>
+            <h2>4. Besaran Penting</h2>
+            <div class="table-wrap"><table><thead><tr><th>Besaran</th><th>Persamaan</th><th>Keterangan</th></tr></thead><tbody><tr><td>Waktu ke puncak</td><td>t<sub>p</sub> = v<sub>0</sub> sin θ / g</td><td>Kecepatan vertikal nol</td></tr><tr><td>Tinggi maksimum</td><td>h<sub>maks</sub> = h<sub>0</sub> + (v<sub>0</sub> sin θ)² / 2g</td><td>Posisi tertinggi</td></tr><tr><td>Jangkauan</td><td>R = v<sub>x</sub> · t<sub>total</sub></td><td>Jarak horizontal saat mendarat</td></tr></tbody></table></div>
+            <div class="callout"><b>Catatan ilmiah</b><p>Persamaan jangkauan sederhana R = v₀² sin(2θ)/g hanya berlaku ketika benda mendarat pada ketinggian yang sama dengan titik peluncuran. Simulasi laboratorium ini juga mendukung ketinggian awal yang berbeda.</p></div>
+          </article>
+          <aside class="panel lesson-aside"><h3>Daftar materi</h3><a href="#materi" class="lesson-link current">01 <span>Pengertian gerak parabola</span></a><a href="#materi" class="lesson-link">02 <span>Komponen kecepatan</span></a><a href="#materi" class="lesson-link">03 <span>Persamaan posisi</span></a><a href="#materi" class="lesson-link">04 <span>Waktu dan tinggi maksimum</span></a><a href="#materi" class="lesson-link">05 <span>Jangkauan horizontal</span></a><a href="#simulasi" class="lesson-cta">Praktikkan konsep ↗</a></aside>
+        </div>
+      </section>
+
+      <section class="page" id="page-simulasi">
+        <div class="page-intro"><div class="eyebrow purple">VIRTUAL EXPERIMENT · 01</div><h1>Simulasi Gerak Parabola</h1><p>Ubah variabel eksperimen dan amati bagaimana lintasan proyektil berubah.</p></div>
+        <div class="sim-layout">
+          <div class="panel sim-panel">
+            <div class="panel-title"><div><span class="live-dot"></span><b>VISUALISASI LINTASAN</b><small>Model gerak ideal · tanpa hambatan udara</small></div><span class="sim-status" id="simStatus">SIAP</span></div>
+            <canvas id="trajectoryCanvas" width="900" height="470" aria-label="Visualisasi lintasan gerak parabola"></canvas>
+            <div class="canvas-legend"><span><i class="legend-dot pink-dot"></i> Lintasan benda</span><span><i class="legend-dot purple-dot"></i> Posisi benda</span><span><i class="legend-dash"></i> Komponen kecepatan</span></div>
+            <div class="sim-buttons"><button class="btn btn-primary" id="launchBtn">▶ Mulai eksperimen</button><button class="btn btn-light" id="pauseBtn">Ⅱ Jeda</button><button class="btn btn-light" id="resetBtn">↺ Ulangi</button><label class="sim-speed">Kecepatan animasi <select id="simSpeed"><option value="0.5">0,5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></label></div>
+          </div>
+          <aside class="panel controls-panel">
+            <div class="panel-title"><div><b>PARAMETER EKSPERIMEN</b><small>Atur nilai variabel</small></div><span class="control-icon">⚙</span></div>
+            <label class="range-label"><span>Kecepatan awal (v₀)</span><output id="speedOut">25 m/s</output></label><input type="range" id="speed" min="5" max="60" value="25" step="1"><div class="range-minmax"><span>5 m/s</span><span>60 m/s</span></div>
+            <label class="range-label"><span>Sudut elevasi (θ)</span><output id="angleOut">45°</output></label><input type="range" id="angle" min="5" max="85" value="45" step="1"><div class="range-minmax"><span>5°</span><span>85°</span></div>
+            <label class="range-label"><span>Ketinggian awal (h₀)</span><output id="heightOut">0 m</output></label><input type="range" id="height" min="0" max="50" value="0" step="1"><div class="range-minmax"><span>0 m</span><span>50 m</span></div>
+            <label class="range-label"><span>Gravitasi (g)</span><output id="gravityOut">9,8 m/s²</output></label><input type="range" id="gravity" min="1" max="25" value="9.8" step="0.1"><div class="range-minmax"><span>1 m/s²</span><span>25 m/s²</span></div>
+            <div class="preset-wrap"><label for="planet">Preset gravitasi</label><select id="planet"><option value="9.8">Bumi · 9,8 m/s²</option><option value="1.62">Bulan · 1,62 m/s²</option><option value="3.71">Mars · 3,71 m/s²</option><option value="24.79">Jupiter · 24,79 m/s²</option><option value="custom">Kustom</option></select></div>
+            <label class="check-row"><input type="checkbox" id="showVectors" checked> Tampilkan vektor kecepatan</label>
+            <label class="check-row"><input type="checkbox" id="showGrid" checked> Tampilkan grid koordinat</label>
+            <button class="btn btn-outline full" id="applyBtn">Terapkan parameter</button>
+          </aside>
+        </div>
+        <div class="metrics-grid" id="metrics">
+          <div class="metric-card"><small>WAKTU TOTAL</small><strong id="flightMetric">3,61 <i>s</i></strong><span>Durasi di udara</span></div>
+          <div class="metric-card"><small>TINGGI MAKSIMUM</small><strong id="heightMetric">10,0 <i>m</i></strong><span>Dari permukaan tanah</span></div>
+          <div class="metric-card"><small>JANGKAUAN</small><strong id="rangeMetric">63,8 <i>m</i></strong><span>Jarak horizontal</span></div>
+          <div class="metric-card"><small>KECEPATAN PUNCAK</small><strong id="apexMetric">17,7 <i>m/s</i></strong><span>Komponen horizontal</span></div>
+        </div>
+        <div class="panel explanation-panel"><b>Interpretasi otomatis</b><p id="interpretation">Pada sudut 45°, komponen horizontal dan vertikal kecepatan awal bernilai sama. Jalankan simulasi untuk mengamati perubahan posisi benda terhadap waktu.</p></div>
+        <div class="panel advanced-panel">
+          <div class="panel-heading-row"><div><div class="eyebrow purple">ADVANCED PHYSICS ENGINE</div><h2>Mode eksperimen</h2><p>Pilih eksplorasi mandiri atau ikuti tahapan investigasi.</p></div><span class="sim-status">RK4 · NUMERIK</span></div>
+          <div class="mode-switch"><label><input type="radio" name="labMode" value="free" checked> Eksperimen bebas</label><label><input type="radio" name="labMode" value="guided"> Eksperimen terbimbing</label></div>
+          <div id="guidedPanel" class="guided-panel" hidden><b>Petunjuk investigasi</b><ol><li>Tetapkan kecepatan awal 25 m/s dan ketinggian 0 m.</li><li>Uji sudut 30°, 45°, dan 60° secara bergantian.</li><li>Catat jangkauan dan tinggi maksimum setiap percobaan.</li><li>Aktifkan hambatan udara, lalu bandingkan hasilnya.</li></ol><p id="guidedHint">Mulai dengan mengatur parameter kecepatan awal.</p></div>
+          <div class="drag-control"><label class="range-label"><span>Hambatan udara (koefisien k)</span><output id="dragOut">0,000</output></label><input type="range" id="drag" min="0" max="0.08" value="0" step="0.001"><div class="range-minmax"><span>Tanpa hambatan</span><span>Hambatan kuat</span></div><small>Model hambatan kuadratik: a<sub>drag</sub> = −k · |v| · v. Nilai k adalah parameter efektif simulasi, bukan koefisien universal benda nyata.</small></div>
+          <div class="live-grid"><div><small>WAKTU</small><b><span id="liveTime">0,00</span> s</b></div><div><small>POSISI X / Y</small><b><span id="liveX">0,00</span> / <span id="liveY">0,00</span> m</b></div><div><small>KECEPATAN X / Y</small><b><span id="liveVx">0,00</span> / <span id="liveVy">0,00</span> m/s</b></div><div><small>KELAJUAN</small><b><span id="liveSpeed">0,00</span> m/s</b></div><div><small>PERCEPATAN X / Y</small><b><span id="liveAx">0,00</span> / <span id="liveAy">-9,80</span> m/s²</b></div></div>
+        </div>
+        <div class="panel graph-grid-panel"><div class="panel-heading-row"><div><h2>Grafik kinematika real-time</h2><p>Kurva bergerak mengikuti waktu simulasi.</p></div></div><div class="graphs-grid"><div><b>Posisi horizontal · x(t)</b><canvas id="chartXt" width="520" height="190"></canvas></div><div><b>Posisi vertikal · y(t)</b><canvas id="chartYt" width="520" height="190"></canvas></div><div><b>Kecepatan horizontal · vx(t)</b><canvas id="chartVxt" width="520" height="190"></canvas></div><div><b>Kecepatan vertikal · vy(t)</b><canvas id="chartVyt" width="520" height="190"></canvas></div></div></div>
+        <div class="panel compare-panel"><div class="panel-heading-row"><div><h2>Perbandingan sudut peluncuran</h2><p>Bandingkan bentuk lintasan dengan parameter lain tetap.</p></div><button class="btn btn-outline" id="compareBtn">Bandingkan sudut</button></div><div class="angle-chips"><label><input type="checkbox" class="compareAngle" value="30" checked> 30°</label><label><input type="checkbox" class="compareAngle" value="45" checked> 45°</label><label><input type="checkbox" class="compareAngle" value="60" checked> 60°</label><label><input type="checkbox" class="compareAngle" value="75"> 75°</label></div><canvas id="comparisonChart" width="900" height="300"></canvas><div id="comparisonLegend" class="comparison-legend"></div></div>
+      </section>
+
+      <section class="page" id="page-eksperimen">
+        <div class="page-intro"><div class="eyebrow purple">DATA & ANALISIS · 02</div><h1>Eksperimen dan Data</h1><p>Simpan beberapa variasi percobaan, lalu bandingkan hasilnya.</p></div>
+        <div class="metrics-grid compact-metrics"><div class="metric-card"><small>JUMLAH PERCOBAAN</small><strong id="trialCount">0</strong><span>Data tersimpan lokal</span></div><div class="metric-card"><small>RATA-RATA JANGKAUAN</small><strong id="averageRange">—</strong><span>Seluruh percobaan</span></div><div class="metric-card"><small>JANGKAUAN TERJAUH</small><strong id="bestRange">—</strong><span>Hasil terbaik</span></div></div>
+        <div class="panel">
+          <div class="panel-heading-row"><div><h2>Catatan percobaan</h2><p>Data dihitung dari parameter simulasi saat ini.</p></div><div class="button-group"><button class="btn btn-light" id="exportCsv">↓ Ekspor CSV</button><button class="btn btn-primary" id="saveTrial">＋ Simpan percobaan</button></div></div>
+          <div class="table-wrap"><table><thead><tr><th>No.</th><th>Kecepatan</th><th>Sudut</th><th>Gravitasi</th><th>Waktu</th><th>Tinggi maks.</th><th>Jangkauan</th><th>Aksi</th></tr></thead><tbody id="trialRows"><tr><td colspan="8" class="empty-state">Belum ada data. Jalankan simulasi, lalu simpan percobaan.</td></tr></tbody></table></div>
+          <div class="table-foot"><span>Data tersimpan pada browser perangkat ini.</span><button class="text-button danger-text" id="clearTrials">Hapus semua data</button></div>
+        </div>
+        <div class="panel chart-panel"><div class="panel-heading-row"><div><h2>Analisis sudut dan jangkauan</h2><p>Grafik berdasarkan data percobaan yang tersimpan.</p></div></div><canvas id="rangeChart" width="900" height="300" aria-label="Grafik jangkauan percobaan"></canvas></div>
+      </section>
+
+      <section class="page" id="page-lkpd">
+        <div class="page-intro"><div class="eyebrow purple">LEMBAR KERJA PESERTA DIDIK · 03</div><h1>LKPD Digital</h1><p>Lengkapi identitas, catat hasil investigasi, dan susun kesimpulan.</p></div>
+        <div class="panel lkpd-panel">
+          <div class="lkpd-head"><div class="lkpd-logo">A+</div><div><small>LABORATORIUM MAYA FISIKA</small><h2>LEMBAR KERJA PESERTA DIDIK</h2><p>Topik: Gerak Parabola · SMA Kelas X–XI</p></div><span class="lkpd-no">LKPD<br><b>01</b></span></div>
+          <div class="callout"><b>Tujuan praktikum</b><p>Peserta didik mampu menjelaskan karakteristik gerak parabola, menganalisis pengaruh sudut elevasi dan kecepatan awal terhadap lintasan, serta menyimpulkan hasil eksperimen berdasarkan data.</p></div>
+          <h3>A. Identitas Peserta Didik</h3>
+          <div class="form-grid"><label>Nama lengkap<input id="studentName" placeholder="Masukkan nama"></label><label>Kelas<input id="studentClass" placeholder="Contoh: X-1"></label><label>Kelompok<input id="studentGroup" placeholder="Nomor kelompok"></label><label>Tanggal<input id="studentDate" type="date"></label></div>
+          <h3>B. Pertanyaan Investigasi</h3>
+          <ol class="question-list"><li>Bagaimana pengaruh perubahan sudut elevasi terhadap jangkauan horizontal jika kecepatan awal tetap?</li><li>Mengapa komponen kecepatan horizontal dianggap konstan pada model ideal?</li><li>Bagaimana pengaruh percepatan gravitasi terhadap waktu total benda di udara?</li></ol>
+          <h3>C. Tabel Hasil Pengamatan</h3>
+          <p class="muted">Gunakan menu Eksperimen & Data untuk menyimpan percobaan, lalu data dapat ditransfer ke laporan ini.</p>
+          <div class="table-wrap"><table><thead><tr><th>No.</th><th>v₀ (m/s)</th><th>θ (°)</th><th>g (m/s²)</th><th>Waktu (s)</th><th>Tinggi maks. (m)</th><th>Jangkauan (m)</th></tr></thead><tbody id="lkpdRows"><tr><td colspan="7" class="empty-state">Belum ada data pengamatan.</td></tr></tbody></table></div>
+          <div class="form-grid answer-grid"><label>D. Analisis hasil pengamatan<textarea id="analysisAnswer" rows="4" placeholder="Tuliskan analisis berdasarkan data percobaan..."></textarea></label><label>E. Kesimpulan<textarea id="conclusionAnswer" rows="4" placeholder="Tuliskan kesimpulan praktikum..."></textarea></label></div>
+          <div class="lkpd-actions"><button class="btn btn-light" id="saveLkpd">Simpan jawaban di perangkat</button><button class="btn btn-primary" id="printLkpd">Cetak / Simpan PDF</button></div>
+          <p class="privacy-note">Jawaban dan identitas disimpan secara lokal di browser. Tidak dikirim ke server.</p>
+        </div>
+      </section>
+
+      <section class="page" id="page-evaluasi">
+        <div class="page-intro"><div class="eyebrow purple">UJI PEMAHAMAN · 04</div><h1>Evaluasi Pembelajaran</h1><p>Jawab pertanyaan berikut untuk mengukur pemahamanmu tentang gerak parabola.</p></div>
+        <div class="quiz-layout"><div class="panel quiz-panel"><div class="quiz-top"><span class="quiz-label">KUIS FORMATIF</span><span id="quizProgress">SOAL 1 / 5</span></div><div class="progress-track"><i id="quizProgressBar"></i></div><div id="quizContent"></div><div class="quiz-actions"><button class="btn btn-light" id="prevQuestion">← Sebelumnya</button><button class="btn btn-primary" id="nextQuestion">Selanjutnya →</button></div></div><aside class="panel quiz-aside"><div class="quiz-score-icon">✦</div><h3>Uji pemahaman</h3><p>Kerjakan lima soal pilihan ganda. Hasil akan dihitung setelah semua soal dijawab.</p><div class="score-display"><strong id="scoreDisplay">—</strong><small>NILAI AKHIR</small></div><button class="btn btn-outline full" id="resetQuiz">Ulangi evaluasi</button></aside></div>
+      </section>
+
+      <section class="page" id="page-panduan">
+        <div class="page-intro"><div class="eyebrow purple">PETUNJUK PENGGUNAAN</div><h1>Panduan Praktikum</h1><p>Ikuti langkah-langkah berikut agar eksperimen berjalan sistematis.</p></div>
+        <div class="panel guide-panel"><div class="guide-step"><span>01</span><div><h3>Pelajari konsep dasar</h3><p>Baca materi mengenai komponen kecepatan, persamaan posisi, waktu tempuh, dan jangkauan gerak parabola.</p></div></div><div class="guide-step"><span>02</span><div><h3>Tentukan variabel eksperimen</h3><p>Pilih kecepatan awal, sudut elevasi, ketinggian awal, serta nilai gravitasi yang akan digunakan.</p></div></div><div class="guide-step"><span>03</span><div><h3>Jalankan simulasi</h3><p>Tekan tombol Mulai eksperimen. Amati lintasan dan perubahan posisi benda. Gunakan jeda atau ulangi sesuai kebutuhan.</p></div></div><div class="guide-step"><span>04</span><div><h3>Simpan dan bandingkan data</h3><p>Simpan hasil percobaan. Ulangi dengan satu variabel berbeda agar pengaruhnya dapat dianalisis.</p></div></div><div class="guide-step"><span>05</span><div><h3>Susun laporan praktikum</h3><p>Lengkapi LKPD dengan identitas, hasil pengamatan, analisis, dan kesimpulan. Cetak sebagai PDF jika diperlukan.</p></div></div><div class="callout"><b>Asumsi model</b><p>Simulasi menggunakan model dua dimensi, medan gravitasi konstan, dan mengabaikan hambatan udara serta rotasi bumi. Waktu pendaratan dihitung ketika posisi vertikal benda mencapai permukaan tanah (y = 0).</p></div></div>
+      </section>
+
+
+      <section class="page" id="page-labpro">
+        <div class="page-intro"><div class="eyebrow purple">VIRTUAL LABORATORY PRO · 05</div><h1>Laboratorium Fisika Pro</h1><p>Eksplorasi gerak proyektil dengan model 2D/3D, energi mekanik, skenario nyata, dan laporan praktikum.</p></div>
+        <div class="pro-toolbar panel"><div><b>Identitas eksperimen</b><small>Seluruh proses berjalan lokal di browser.</small></div><div class="pro-fields"><label>Nama siswa<input id="proStudent" placeholder="Nama peserta didik"></label><label>Kelas<input id="proClass" placeholder="XI-1"></label><label>Objek proyektil<select id="proObject"><option value="ball">Bola</option><option value="basket">Bola basket</option><option value="football">Bola sepak</option><option value="stone">Batu</option><option value="custom">Benda khusus</option></select></label></div></div>
+        <div class="pro-grid">
+          <div class="panel pro-controls"><div class="panel-heading-row"><div><h2>Pengaturan model</h2><p>Besaran benda dan kondisi peluncuran</p></div></div>
+            <label class="pro-range">Massa benda <output id="proMassOut">0,50 kg</output><input id="proMass" type="range" min="0.05" max="10" step="0.05" value="0.5"></label>
+            <label class="pro-range">Luas penampang <output id="proAreaOut">0,005 m²</output><input id="proArea" type="range" min="0.001" max="0.1" step="0.001" value="0.005"></label>
+            <label class="pro-range">Koefisien drag Cd <output id="proCdOut">0,47</output><input id="proCd" type="range" min="0" max="1.5" step="0.01" value="0.47"></label>
+            <label class="pro-range">Kerapatan udara <output id="proRhoOut">1,225 kg/m³</output><input id="proRho" type="range" min="0" max="2" step="0.025" value="1.225"></label>
+            <div class="pro-fields"><label>Kecepatan awal (m/s)<input id="proSpeed" type="number" min="1" max="100" value="25"></label><label>Sudut (°)<input id="proAngle" type="number" min="1" max="89" value="45"></label><label>Ketinggian awal (m)<input id="proHeight" type="number" min="0" max="100" value="2"></label><label>Gravitasi (m/s²)<input id="proGravity" type="number" min="0.1" max="30" step="0.1" value="9.8"></label></div>
+            <div class="button-group pro-buttons"><button class="btn btn-primary" id="proRun">Hitung & tampilkan</button><button class="btn btn-light" id="proReset">Reset</button></div>
+            <label class="check-line"><input id="proUseDrag" type="checkbox" checked> Aktifkan hambatan udara realistis</label>
+          </div>
+          <div class="panel pro-view"><div class="panel-heading-row"><div><h2>Visualisasi lintasan</h2><p>Ganti perspektif untuk mengamati gerak proyektil.</p></div><div class="segmented"><button class="active" data-view="2d">2D</button><button data-view="3d">3D</button></div></div>
+            <canvas id="proCanvas" width="900" height="470" aria-label="Simulasi proyektil dua dimensi"></canvas><div id="pro3dView" aria-label="Simulasi proyektil tiga dimensi"><canvas id="pro3dCanvas"></canvas><div class="view-note">3D interaktif · drag untuk memutar · scroll untuk zoom</div></div><div class="pro-legend"><span><i class="legend-path"></i> Lintasan</span><span><i class="legend-velocity"></i> Vektor kecepatan</span><span><i class="legend-gravity"></i> Gravitasi</span></div>
+            <div class="pro-metrics"><div><small>JANGKAUAN</small><b id="proRange">—</b></div><div><small>TINGGI MAKSIMUM</small><b id="proPeak">—</b></div><div><small>WAKTU TERBANG</small><b id="proTime">—</b></div><div><small>ENERGI MEKANIK AWAL</small><b id="proEnergy">—</b></div></div>
+          </div>
+        </div>
+        <div class="panel energy-panel"><div class="panel-heading-row"><div><h2>Analisis energi</h2><p>Energi dihitung pada titik puncak lintasan untuk model yang dipilih.</p></div><span class="class-chip">SATUAN JOULE</span></div><div class="energy-cards"><div><small>ENERGI KINETIK</small><b id="proKE">—</b><span>½ mv²</span></div><div><small>ENERGI POTENSIAL</small><b id="proPE">—</b><span>mgh</span></div><div><small>ENERGI MEKANIK</small><b id="proME">—</b><span>Ek + Ep</span></div></div><p class="muted pro-note">Dengan hambatan udara, energi mekanik benda tidak kekal karena sebagian energi mekanik terdisipasi menjadi energi termal fluida. Perhitungan ini tidak memodelkan suhu atau turbulensi secara eksplisit.</p></div>
+        <div class="panel scenario-panel"><div class="panel-heading-row"><div><h2>Eksperimen kehidupan nyata</h2><p>Pilih konteks untuk mengisi parameter awal yang relevan.</p></div></div><div class="scenario-grid"><button class="scenario-card" data-scenario="basket"><b>🏀 Lemparan basket</b><span>Lintasan bola menuju ring</span></button><button class="scenario-card" data-scenario="football"><b>⚽ Tendangan sepak bola</b><span>Jarak tendangan dan sudut elevasi</span></button><button class="scenario-card" data-scenario="longjump"><b>Atlet lompat jauh</b><span>Komponen horizontal dan vertikal</span></button><button class="scenario-card" data-scenario="water"><b>Air mancur</b><span>Lintasan pancaran air</span></button></div></div>
+        <div class="panel bank-panel"><div class="panel-heading-row"><div><h2>Bank eksperimen</h2><p>Pilih investigasi, lakukan simulasi, lalu simpan hasilnya.</p></div><button class="btn btn-primary" id="proSave">Simpan eksperimen</button></div><div class="experiment-bank"><article><small>INVESTIGASI 01</small><h3>Pengaruh sudut elevasi</h3><p>Bandingkan jangkauan pada kecepatan awal tetap.</p><button data-bank="angle">Gunakan eksperimen ↗</button></article><article><small>INVESTIGASI 02</small><h3>Pengaruh massa benda</h3><p>Uji pengaruh massa saat hambatan udara aktif.</p><button data-bank="mass">Gunakan eksperimen ↗</button></article><article><small>INVESTIGASI 03</small><h3>Pengaruh luas penampang</h3><p>Amati perubahan lintasan akibat gaya hambat.</p><button data-bank="area">Gunakan eksperimen ↗</button></article><article><small>INVESTIGASI 04</small><h3>Konservasi energi</h3><p>Bandingkan Ek, Ep, dan energi mekanik sepanjang lintasan.</p><button data-bank="energy">Gunakan eksperimen ↗</button></article></div><div class="table-wrap pro-table-wrap"><table><thead><tr><th>Eksperimen</th><th>Objek</th><th>Massa</th><th>Cd</th><th>Jangkauan</th><th>Waktu</th><th>Aksi</th></tr></thead><tbody id="proRows"><tr><td colspan="7" class="empty-state">Belum ada eksperimen Pro tersimpan.</td></tr></tbody></table></div></div>
+        <div class="panel teacher-panel"><div class="panel-heading-row"><div><h2>Dashboard guru & siswa</h2><p>Ringkasan penggunaan dari data yang tersimpan pada browser ini.</p></div><label>Mode tampilan<select id="dashboardRole"><option value="student">Siswa</option><option value="teacher">Guru</option></select></label></div><div id="dashboardContent" class="dashboard-content"></div><div class="button-group"><button class="btn btn-light" id="exportProCsv">Ekspor data CSV</button><button class="btn btn-primary" id="proReport">Cetak laporan / PDF</button></div><p class="privacy-note">Mode guru/siswa hanya pengaturan tampilan lokal. Tanpa backend, data tidak tersinkronisasi atau terkumpul lintas perangkat.</p></div>
+      </section>
+
+      <footer class="main-footer"><span>© <span data-year></span> AbdUmar Lab Maya</span><span>Laboratorium Virtual Fisika · Gerak Parabola</span><a href="#panduan">Panduan penggunaan ↑</a></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="assets/js/physics-engine.js"></script>
+  <script src="assets/js/simulation.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.min.js"></script>
+  <script src="assets/js/lab-pro.js"></script>
+</body>
+</html>
